@@ -24,7 +24,7 @@ export default new Router({
       path: '/event/create',
       name: 'event-create',
       component: EventCreate
-    },
+    }
     // {
     //   path: '/about',
     //   name: 'about',
