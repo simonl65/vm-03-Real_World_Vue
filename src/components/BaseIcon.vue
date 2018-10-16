@@ -7,6 +7,7 @@
     >
       <use v-bind="{'xlink:href':'/img/feather-sprite.svg#'+name}"/>
     </svg>
+    <slot/>
   </div>
 </template>
 
