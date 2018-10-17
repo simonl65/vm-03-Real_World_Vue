@@ -20,6 +20,12 @@ export default new Vuex.Store({
       { id: 2, text: 'Two', done: false },
       { id: 3, text: 'Three', done: true },
       { id: 4, text: 'Four', done: false }
+    ],
+    events: [
+      { id: 1, title: 'e1', organiser: 'a' },
+      { id: 2, title: 'e2', organiser: 'b' },
+      { id: 3, title: 'e3', organiser: 'c' },
+      { id: 4, title: 'e4', organiser: 'd' }
     ]
   },
 
@@ -32,17 +38,21 @@ export default new Vuex.Store({
       return state.categories.length
     },
 
-    donetodos: state => {
+    doneTodos: state => {
       return state.todos.filter(todo => todo.done)
     },
 
     // Passing in getters:
     activeTodosCount: (state, getters) => {
-      return state.todos.length - getters.donetodos.length
-    }
+      return state.todos.length - getters.doneTodos.length
+    },
     // Without passing in getters:
     // activeTodosCount: state => {
     //   return state.todos.filter(todo => !todo.done).length
     // }
+
+    getEventById: state => id => {
+      return state.events.find(event => event.id === id)
+    }
   }
 })
