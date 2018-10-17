@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import EventService from '@/services/EventService.js'
 
 Vue.use(Vuex)
 
@@ -21,17 +22,22 @@ export default new Vuex.Store({
       { id: 3, text: 'Three', done: true },
       { id: 4, text: 'Four', done: false }
     ],
-    events: [
-      { id: 1, title: 'e1', organiser: 'a' },
-      { id: 2, title: 'e2', organiser: 'b' },
-      { id: 3, title: 'e3', organiser: 'c' },
-      { id: 4, title: 'e4', organiser: 'd' }
-    ]
+    events: []
   },
 
-  mutations: {},
+  mutations: {
+    ADD_EVENT(state, event) {
+      state.events.push(event)
+    }
+  },
 
-  actions: {},
+  actions: {
+    createEvent({ commit }, event) {
+      return EventService.postEvent(event).then(() => {
+        commit('ADD_EVENT', event)
+      })
+    }
+  },
 
   getters: {
     catLength: state => {

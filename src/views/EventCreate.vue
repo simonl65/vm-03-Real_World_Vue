@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Create an event</h1>
-    <form>
+    <form @submit.prevent="createEvent">
       <label>Select a category</label>
       <select v-model="event.category">
         <option 
@@ -68,14 +68,29 @@ export default {
       times.push(i + ':00')
     }
     return {
-      event: this.createFreshEvent(),
+      event: this.createFreshEventObject(),
       categories: this.$store.state.categories,
       times
     }
   },
 
   methods: {
-    createFreshEvent() {
+    createEvent() {
+      this.$store
+        .dispatch('createEvent', this.event)
+        .then(() => {
+          this.$router.push({
+            name: 'event-show',
+            params: { id: this.event.id }
+          })
+          this.event = this.createFreshEventObject()
+        })
+        .catch(() => {
+          console.error('There was a problem creating your event')
+        })
+    },
+
+    createFreshEventObject() {
       const user = this.$store.state.user
       return {
         category: '',
