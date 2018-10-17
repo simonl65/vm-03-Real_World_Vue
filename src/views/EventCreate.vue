@@ -7,16 +7,14 @@
 </template>
 
 <script>
-export default {
-  computed: {
-    userName() {
-      return this.$store.state.user.name
-    },
+import { mapState } from 'vuex'
 
-    userID() {
-      return this.$store.state.user.id
-    }
-  }
+export default {
+  computed: mapState({
+    userName: state => state.user.name,
+    userID: state => state.user.id,
+    categories: state => state.categories
+  })
 }
 </script>
 
