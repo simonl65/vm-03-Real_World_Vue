@@ -26,6 +26,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  min-height: 100.1vh;
 }
 #app {
   box-sizing: border-box;
