@@ -233,7 +233,7 @@
       "attendees": []
     },
     {
-      "category": "animal wlfare",
+      "category": "animal welfare",
       "organizer": {
         "id": "abc123",
         "name": "Adam Jahr"
@@ -245,6 +245,48 @@
       "time": "2:00",
       "attendees": [],
       "id": 11
+    },
+    {
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "COMMUNITY",
+      "description": "",
+      "location": "HERE",
+      "date": "2018-10-01T08:22:00.000Z",
+      "time": "1:00",
+      "attendees": [],
+      "id": 12
+    },
+    {
+      "id": 371354,
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "EDUCATION",
+      "description": "NO DESCRIPTION",
+      "location": "HERE",
+      "date": "2018-10-06T08:26:00.000Z",
+      "time": "1:00",
+      "attendees": []
+    },
+    {
+      "id": 3895903,
+      "category": "food",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "FOOD",
+      "description": "EAT SOME",
+      "location": "KITCHEN",
+      "date": "",
+      "time": "",
+      "attendees": []
     }
   ]
 }

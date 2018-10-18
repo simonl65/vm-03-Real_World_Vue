@@ -10,7 +10,7 @@ export default new Vuex.Store({
     categories: [
       'sustainability',
       'nature',
-      'animal wlfare',
+      'animal welfare',
       'housing',
       'education',
       'food',
