@@ -36,7 +36,7 @@ export default {
   }),
 
   created() {
-    this.$store.dispatch('fetchEvent', this.id)
+    this.$store.dispatch('m_event/fetchEvent', this.id)
   }
 }
 </script>
