@@ -2,7 +2,7 @@
   <div>
     <h1>Event for {{ m_user.user.name }}</h1>
     <EventCard
-      v-for="event in events"
+      v-for="event in m_event.events"
       :key="event.id"
       :event="event"
     />
@@ -40,9 +40,9 @@ export default {
       return parseInt(this.$route.query.page) || 1
     },
     hasNextPage() {
-      return this.eventsTotal > this.page * this.perPage
+      return this.m_event.eventsTotal > this.page * this.perPage
     },
-    ...mapState(['events', 'eventsTotal', 'm_user'])
+    ...mapState(['m_event', 'm_user'])
   },
 
   created() {
